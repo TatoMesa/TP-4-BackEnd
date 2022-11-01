@@ -12,16 +12,13 @@ function conversionPesos($monto , $tipoMoneda){
 
     switch ($tipoMoneda){
         case "libra" :
-            return $monto * 23.11;
-           
+            return $monto * 299;
         case "dolar" :
-            return $monto * 17.48;
-            
+            return $monto * 292;
         case "yen" :
-            return $monto * 0.154;
-            
+            return $monto * 198;
         case "euro" :
-            return $monto * 20.59;
+            return $monto * 294;
         default :
             return 0;    
         
