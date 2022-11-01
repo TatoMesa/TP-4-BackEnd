@@ -48,7 +48,7 @@ do {
         $n2 = notaValida();
         $prom = promedioNotas($n1,$n2);
         $calificacion = calificacionNotas($prom);   //
-        echo ("El estudiante cuyo DNI es: " . $dni . " a obtenido una calificacion de: " . $calificacion).PHP_EOL;
+        echo ("El estudiante cuyo DNI es: $dni a obtenido una calificacion de: ") . $calificacion .PHP_EOL;
         $fin = false;
     }
 }while ($fin != true);
