@@ -27,12 +27,30 @@ function calificacionNotas($n){
         return "Sobresaliente";
 }
 
+function notaValida(){
+    $n1 = readline("ingrese la nota del alumno: ") . PHP_EOL;
+    if (($n1 < 0) or ($n1 > 10)){
+        echo("Nota invalida, debe ser un numero real >= 0 y <= 10").PHP_EOL;
+        return notaValida();
+    }else
+        return $n1;
+}
+
+
 do {
-    $dni = readline("ingres el DNI del estudiante, 999 para finalizar: ") . Php_EOL;
-    $n1 = readline("ingrese la 1ª nota del alumno: ") . Php_EOL;
-    $n2 = readline("ingrese la 2ª nota del alumno: ") . Php_EOL;
-} while ($dni != 999);
-
-
-
+    $dni = readline("ingres el DNI del estudiante, 999 para finalizar: ") . PHP_EOL;
+    
+    if($dni == 999){
+        echo("Fin de ingreso de notas.").PHP_EOL;
+        $fin = true; 
+    }else{    
+        $n1 = notaValida();
+        $n2 = notaValida();
+        $prom = promedioNotas($n1,$n2);
+        $calificacion = calificacionNotas($prom);   //
+        echo ("El estudiante cuyo DNI es: " . $dni . " a obtenido una calificacion de: " . $calificacion).PHP_EOL;
+        $fin = false;
+    }
+}while ($fin != true);
+ 
 ?>
