@@ -44,8 +44,8 @@ do {
         echo("Fin de ingreso de notas.").PHP_EOL;
         $fin = true; 
     }else{    
-        $n1 = notaValida();
-        $n2 = notaValida();
+        $n1 = (float)notaValida();
+        $n2 = (float)notaValida();
         $prom = promedioNotas($n1,$n2);
         $calificacion = calificacionNotas($prom);   //
         echo ("El estudiante cuyo DNI es: $dni a obtenido una calificacion de: ") . $calificacion .PHP_EOL;
